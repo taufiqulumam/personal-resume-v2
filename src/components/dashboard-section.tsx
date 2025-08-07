@@ -1,5 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
-import { Badge } from "./ui/badge"
 import { Calendar, MapPin, Users, TrendingUp } from 'lucide-react'
 import { Button } from "./ui/button"
 import { FileDown } from "lucide-react"

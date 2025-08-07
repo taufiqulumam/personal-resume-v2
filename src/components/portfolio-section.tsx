@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import { Github } from "lucide-react"
 
 export function PortfolioSection() {
   const projects = [

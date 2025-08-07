@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
-import { MapPin, Calendar, Mail, Phone} from 'lucide-react'
 
 export function AboutSection() {
   const personalInfo = [
