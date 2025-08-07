@@ -1,4 +1,3 @@
-import { Calendar, MapPin, Users, TrendingUp } from 'lucide-react'
 import { Button } from "./ui/button"
 import { FileDown } from "lucide-react"
 
