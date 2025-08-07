@@ -124,32 +124,32 @@ export function EducationSection() {
     },
   ]
 
-  const courses = [
-    {
-      name: "Advanced React Patterns",
-      provider: "Frontend Masters",
-      date: "2023",
-      duration: "40 hours",
-    },
-    {
-      name: "Node.js Microservices",
-      provider: "Udemy",
-      date: "2022",
-      duration: "60 hours",
-    },
-    {
-      name: "System Design Interview",
-      provider: "Educative",
-      date: "2022",
-      duration: "30 hours",
-    },
-    {
-      name: "Docker & Kubernetes",
-      provider: "Linux Academy",
-      date: "2021",
-      duration: "50 hours",
-    },
-  ]
+  // const courses = [
+  //   {
+  //     name: "Advanced React Patterns",
+  //     provider: "Frontend Masters",
+  //     date: "2023",
+  //     duration: "40 hours",
+  //   },
+  //   {
+  //     name: "Node.js Microservices",
+  //     provider: "Udemy",
+  //     date: "2022",
+  //     duration: "60 hours",
+  //   },
+  //   {
+  //     name: "System Design Interview",
+  //     provider: "Educative",
+  //     date: "2022",
+  //     duration: "30 hours",
+  //   },
+  //   {
+  //     name: "Docker & Kubernetes",
+  //     provider: "Linux Academy",
+  //     date: "2021",
+  //     duration: "50 hours",
+  //   },
+  // ]
 
   return (
     <div className="space-y-8">

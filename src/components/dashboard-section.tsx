@@ -3,38 +3,38 @@ import { Button } from "./ui/button"
 import { FileDown } from "lucide-react"
 
 export function DashboardSection() {
-  const stats = [
-    {
-      title: "Projects Completed",
-      value: "24",
-      description: "Total projects delivered",
-      icon: TrendingUp,
-    },
-    {
-      title: "Years Experience",
-      value: "5+",
-      description: "Professional experience",
-      icon: Calendar,
-    },
-    {
-      title: "Happy Clients",
-      value: "18",
-      description: "Satisfied customers",
-      icon: Users,
-    },
-    {
-      title: "Current Location",
-      value: "Jakarta",
-      description: "Indonesia",
-      icon: MapPin,
-    },
-  ]
+  // const stats = [
+  //   {
+  //     title: "Projects Completed",
+  //     value: "24",
+  //     description: "Total projects delivered",
+  //     icon: TrendingUp,
+  //   },
+  //   {
+  //     title: "Years Experience",
+  //     value: "5+",
+  //     description: "Professional experience",
+  //     icon: Calendar,
+  //   },
+  //   {
+  //     title: "Happy Clients",
+  //     value: "18",
+  //     description: "Satisfied customers",
+  //     icon: Users,
+  //   },
+  //   {
+  //     title: "Current Location",
+  //     value: "Jakarta",
+  //     description: "Indonesia",
+  //     icon: MapPin,
+  //   },
+  // ]
 
-  const recentProjects = [
-    { name: "E-commerce Platform", status: "Completed", tech: ["React", "Node.js"] },
-    { name: "Mobile Banking App", status: "In Progress", tech: ["React Native", "Firebase"] },
-    { name: "CRM Dashboard", status: "Completed", tech: ["Vue.js", "Laravel"] },
-  ]
+  // const recentProjects = [
+  //   { name: "E-commerce Platform", status: "Completed", tech: ["React", "Node.js"] },
+  //   { name: "Mobile Banking App", status: "In Progress", tech: ["React Native", "Firebase"] },
+  //   { name: "CRM Dashboard", status: "Completed", tech: ["Vue.js", "Laravel"] },
+  // ]
 
   return (
     <div className="space-y-8">
