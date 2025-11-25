@@ -12,7 +12,7 @@ export function SkillsSection() {
 
   const frameworks = ["React.js", "Vue.js", "Express.js", "Node.js", "Laravel", "Livewire", "Bootstrap", "Tailwind CSS", "Oracle", "PostgreSQL", "MySQL", "MongoDB"]
 
-  const tools = ["Git", "Docker", "Jenkins", "Postman", "VS Code", "Cursor", "Jira", "Dbeaver"]
+  const tools = ["Git", "Docker", "Jenkins", "Postman", "VS Code", "Cursor", "Jira", "DBeaver"]
 
   const softSkills = [
     "Problem Solving",

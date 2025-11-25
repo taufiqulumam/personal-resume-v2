@@ -46,6 +46,20 @@ export function EducationSection() {
 
   const certifications = [
     {
+      name: "PLM200 - Business Processes in Project Management",
+      issuer: "Edugate Indonesia",
+      date: "2025",
+      credentialId: "550175758",
+      status: "Active",
+    },
+    {
+      name: "SAP01 - SAP Overview",
+      issuer: "Edugate Indonesia",
+      date: "2025",
+      credentialId: "550175780",
+      status: "Active",
+    },
+    {
       name: "Python Fundamental for Data Science",
       issuer: "DQLab",
       date: "2021",

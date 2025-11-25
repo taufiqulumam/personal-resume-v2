@@ -1,7 +1,24 @@
+import { useState } from "react"
 import { Button } from "./ui/button"
-import { FileDown } from "lucide-react"
+import { FileDown, Loader2 } from "lucide-react"
+import { generateResumePDF } from "../utils/generatePDF"
 
 export function DashboardSection() {
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
+
+  const handleDownloadResume = async () => {
+    setIsGeneratingPDF(true)
+    try {
+      // Small delay to show loading state
+      await new Promise(resolve => setTimeout(resolve, 500))
+      generateResumePDF()
+    } catch (error) {
+      console.error('Error generating PDF:', error)
+    } finally {
+      setIsGeneratingPDF(false)
+    }
+  }
+
   // const stats = [
   //   {
   //     title: "Projects Completed",
@@ -47,11 +64,23 @@ export function DashboardSection() {
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           I'm Muhammad Taufiqul Umam, a Full Stack Developer who is communicative, trustworthy, hardworking, responsible and able to work with teams or individuals who have expertise in the field of web programming.
         </p>
-        <Button className="mt-4" variant="default">
-          <a href="/doc/Muhammad_Taufiqul_Umam_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-            <FileDown className="w-4 h-4" />
-            Resume
-          </a>
+        <Button 
+          className="mt-4" 
+          variant="default" 
+          onClick={handleDownloadResume}
+          disabled={isGeneratingPDF}
+        >
+          {isGeneratingPDF ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Generating PDF...
+            </>
+          ) : (
+            <>
+              <FileDown className="w-4 h-4 mr-2" />
+              Download Resume
+            </>
+          )}
         </Button>
       </div>
 
