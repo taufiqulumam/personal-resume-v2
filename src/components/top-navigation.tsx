@@ -5,6 +5,7 @@ import { Button } from "./ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet"
 import { User, Code, Briefcase, GraduationCap, FolderOpen, Mail, Home, Menu } from 'lucide-react'
 import { ThemeToggle } from "./theme-toggle"
+import { useTheme } from "../contexts/ThemeContext"
 
 const menuItems = [
   {
@@ -50,6 +51,7 @@ interface TopNavigationProps {
 }
 
 export function TopNavigation({ activeSection, onSectionChange }: TopNavigationProps) {
+  const { isDarkMode } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
 
   const handleSectionChange = (section: string) => {
@@ -66,7 +68,7 @@ export function TopNavigation({ activeSection, onSectionChange }: TopNavigationP
             {menuItems.map((item) => (
               <Button
                 key={item.title}
-                variant={activeSection === item.url ? "default" : "ghost"}
+                variant={activeSection === item.url ? (isDarkMode ? "secondary" : "default") : "ghost"}
                 size="sm"
                 onClick={() => onSectionChange(item.url)}
                 className="flex items-center gap-2 transition-all duration-200"
@@ -97,7 +99,7 @@ export function TopNavigation({ activeSection, onSectionChange }: TopNavigationP
                     {menuItems.map((item) => (
                       <Button
                         key={item.title}
-                        variant={activeSection === item.url ? "default" : "ghost"}
+                        variant={activeSection === item.url ? (isDarkMode ? "secondary" : "default") : "ghost"}
                         onClick={() => handleSectionChange(item.url)}
                         className="justify-start gap-3 h-12"
                       >

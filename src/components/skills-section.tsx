@@ -1,8 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Progress } from "./ui/progress"
 import { Badge } from "./ui/badge"
+import { useTheme } from "../contexts/ThemeContext"
 
 export function SkillsSection() {
+  const { isDarkMode } = useTheme()
   const technicalSkills = [
     { name: "PHP", level: 90 },
     { name: "JavaScript/TypeScript", level: 80 },
@@ -59,7 +61,7 @@ export function SkillsSection() {
           <CardContent>
             <div className="flex flex-wrap gap-2">
               {frameworks.map((framework) => (
-                <Badge key={framework} variant="default">
+                <Badge key={framework} variant={isDarkMode ? "secondary" : "default"}>
                   {framework}
                 </Badge>
               ))}
@@ -75,7 +77,7 @@ export function SkillsSection() {
           <CardContent>
             <div className="flex flex-wrap gap-2">
               {tools.map((tool) => (
-                <Badge key={tool} variant="secondary">
+                <Badge key={tool} variant="outline">
                   {tool}
                 </Badge>
               ))}

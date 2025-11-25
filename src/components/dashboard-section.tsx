@@ -2,9 +2,11 @@ import { useState } from "react"
 import { Button } from "./ui/button"
 import { FileDown, Loader2 } from "lucide-react"
 import { generateResumePDF } from "../utils/generatePDF"
+import { useTheme } from "../contexts/ThemeContext"
 
 export function DashboardSection() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
+  const { isDarkMode } = useTheme()
 
   const handleDownloadResume = async () => {
     setIsGeneratingPDF(true)
@@ -66,7 +68,7 @@ export function DashboardSection() {
         </p>
         <Button 
           className="mt-4" 
-          variant="default" 
+          variant={isDarkMode ? "secondary" : "default"}
           onClick={handleDownloadResume}
           disabled={isGeneratingPDF}
         >

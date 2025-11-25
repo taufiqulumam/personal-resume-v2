@@ -5,8 +5,10 @@ import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import { Label } from "./ui/label"
 import { Mail, MapPin, Linkedin, Github, Send } from 'lucide-react'
+import { useTheme } from "../contexts/ThemeContext"
 
 export function ContactSection() {
+  const { isDarkMode } = useTheme()
   const contactInfo = [
     {
       icon: Mail,
@@ -103,12 +105,12 @@ export function ContactSection() {
             <CardContent className="space-y-4">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <info.icon className="w-5 h-5 text-primary" />
+                  <div className={`w-10 h-10 ${isDarkMode ? 'bg-secondary/10' : 'bg-primary/10'} rounded-lg flex items-center justify-center`}>
+                    <info.icon className={`w-5 h-5 ${isDarkMode ? 'text-secondary' : 'text-primary'}`} />
                   </div>
                   <div>
                     <p className="font-medium">{info.label}</p>
-                    <a href={info.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <a href={info.href} className={`text-sm text-muted-foreground ${isDarkMode ? 'hover:text-secondary' : 'hover:text-primary'} transition-colors`}>
                       {info.value}
                     </a>
                   </div>
@@ -125,8 +127,8 @@ export function ContactSection() {
             <CardContent className="space-y-4">
               {socialLinks.map((social, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <social.icon className="w-5 h-5 text-primary" />
+                  <div className={`w-10 h-10 ${isDarkMode ? 'bg-secondary/10' : 'bg-primary/10'} rounded-lg flex items-center justify-center`}>
+                    <social.icon className={`w-5 h-5 ${isDarkMode ? 'text-secondary' : 'text-primary'}`} />
                   </div>
                   <div>
                     <p className="font-medium">{social.label}</p>
@@ -134,7 +136,7 @@ export function ContactSection() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      className={`text-sm text-muted-foreground ${isDarkMode ? 'hover:text-secondary' : 'hover:text-primary'} transition-colors`}
                     >
                       {social.value}
                     </a>
@@ -181,7 +183,7 @@ export function ContactSection() {
                 />
               </div>
 
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" variant={isDarkMode ? "secondary" : "default"}>
                 <Send className="w-4 h-4 mr-2" />
                 Send Message
               </Button>

@@ -1,8 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
 import { Calendar, MapPin, Award, BookOpen } from "lucide-react"
+import { useTheme } from "../contexts/ThemeContext"
 
 export function EducationSection() {
+  const { isDarkMode } = useTheme()
+
   const education = [
     {
       degree: "Master of Management Information System",
@@ -246,7 +249,7 @@ export function EducationSection() {
                       <CardTitle className="text-lg">{cert.name}</CardTitle>
                       <CardDescription>{cert.issuer}</CardDescription>
                     </div>
-                    <Badge variant={cert.status === "Active" ? "default" : "secondary"}>{cert.status}</Badge>
+                    <Badge variant={cert.status === "Active" ? (isDarkMode ? "secondary" : "default") : "secondary"}>{cert.status}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
