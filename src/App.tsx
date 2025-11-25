@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import PortfolioDashboard from "./components/portfolio-dashboard";
 import { initGA, logPageView } from "./ga";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -10,9 +11,11 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="App">
-      <PortfolioDashboard />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <PortfolioDashboard />
+      </div>
+    </ThemeProvider>
   );
 };
 
