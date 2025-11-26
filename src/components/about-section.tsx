@@ -1,8 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 import { Mail, MapPin } from 'lucide-react'
 import { Badge } from "./ui/badge"
+import { useTheme } from "../contexts/ThemeContext"
 
 export function AboutSection() {
+  const { isDarkMode } = useTheme()
   const personalInfo = [
     { icon: MapPin, label: "Location", value: "Bekasi, West Java, Indonesia" },
     // { icon: Calendar, label: "Age", value: "26 years old" },
@@ -30,8 +32,8 @@ export function AboutSection() {
           <CardContent className="space-y-4">
             {personalInfo.map((info, index) => (
               <div key={index} className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                  <info.icon className="h-4 w-4 text-primary" />
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${isDarkMode ? "bg-secondary/10" : "bg-primary/10"}`}>
+                  <info.icon className={`h-4 w-4 ${isDarkMode ? "text-secondary" : "text-primary"}`} />
                 </div>
                 <div>
                   <span className="text-sm font-medium">{info.label}:</span>
